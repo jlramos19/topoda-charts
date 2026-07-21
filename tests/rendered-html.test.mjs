@@ -9,10 +9,12 @@ test("the company landing page sells the shared universe and its products", asyn
 
   assert.match(html, /Every record/);
   assert.match(html, /leaves a legacy/);
-  assert.match(html, /The shared universe/);
+  assert.match(html, /The Tópoda Charts Universe/);
   assert.match(html, /Record Label Simulator/);
   assert.match(html, /The Twenty-four Hundreds/);
-  assert.match(html, /Earth became Gaia/);
+  assert.match(html, /Welcome to Gaia/);
+  assert.match(html, /Hear tomorrow first/);
+  assert.match(html, /Fight for every listener/);
   assert.match(html, /href="\/rls"/);
   assert.match(html, /href="\/tth"/);
   assert.doesNotMatch(html, /mailto:|hello@topodacharts\.com/i);
@@ -24,7 +26,7 @@ test("the story page stays immersive and gives readers a concrete hook", async (
 
   assert.match(html, /31 December 2399/i);
   assert.match(html, /Marc Hann/);
-  assert.match(html, /last-minute invitation/i);
+  assert.match(html, /invitation he was never supposed to need/i);
   assert.match(html, /A story from Gaia/);
   assert.doesNotMatch(html, /canon|spoiler-safe|branch stabilizes|active development/i);
 });
