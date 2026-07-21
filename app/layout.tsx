@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tópoda Charts Studios",
-  description: "A culture studio creating worlds, records, stories, and experiences.",
+  title: "Tópoda Charts — Record Label Simulator & The Twenty-four Hundreds",
+  description: "Enter the shared music universe of Record Label Simulator, The Twenty-four Hundreds, and the future Earth called Gaia.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
