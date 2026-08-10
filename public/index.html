@@ -2,45 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Tópoda Charts — Record Label Simulator & The Twenty-four Hundreds</title>
-  <meta name="description" content="Enter the shared music universe of Record Label Simulator, The Twenty-four Hundreds, and the future Earth called Gaia.">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
-    :root{--night:#0a0b0f;--paper:#f1eee5;--signal:#d8ff38;--violet:#a99cff;--muted:#9a9ca3;--line:#303239;--grid:rgba(255,255,255,.055)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--night);color:var(--paper);font-family:'Space Mono',monospace;font-size:14px}a{color:inherit;text-decoration:none}::selection{background:var(--signal);color:var(--night)}
-    .shell{width:min(1440px,100%);margin:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
-    nav{position:sticky;top:0;z-index:20;height:74px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 30px;border-bottom:1px solid var(--line);background:rgba(10,11,15,.92);backdrop-filter:blur(12px)}
-    .brand{font-family:'Archivo Black',sans-serif;font-size:18px;letter-spacing:-.06em}.brand i{color:var(--signal);font-style:normal}.navlinks{display:flex;gap:28px;font-size:11px;text-transform:uppercase}.navlinks a:hover{color:var(--signal)}.status{justify-self:end;color:var(--muted);font-size:10px;text-transform:uppercase}.status:before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--signal);margin-right:8px;box-shadow:0 0 14px var(--signal)}
-    .hero{min-height:720px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(330px,.5fr);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px;border-bottom:1px solid var(--line)}
-    .hero-copy{padding:110px 6vw 80px}.kicker,.section-label{color:var(--signal);text-transform:uppercase;font-size:10px;letter-spacing:.14em}.hero h1{font-family:'Archivo Black',sans-serif;font-size:clamp(64px,9vw,142px);line-height:.82;letter-spacing:-.075em;text-transform:uppercase;margin:34px 0}.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1.5px var(--paper)}.intro{max-width:710px;font-size:16px;line-height:1.75;color:#c7c8cd}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}.btn{display:inline-flex;align-items:center;justify-content:space-between;min-width:180px;padding:15px 16px;border:1px solid var(--paper);font-size:11px;text-transform:uppercase}.btn.primary{background:var(--signal);border-color:var(--signal);color:var(--night)}.btn:hover{background:var(--paper);color:var(--night)}
-    .layer-map{border-left:1px solid var(--line);display:flex;flex-direction:column}.map-head{padding:24px;border-bottom:1px solid var(--line);font-size:10px;color:var(--muted);text-transform:uppercase}.layer{flex:1;min-height:130px;padding:25px;display:grid;grid-template-columns:44px 1fr;gap:10px;border-bottom:1px solid var(--line)}.layer:last-child{border:0}.layer b{color:var(--signal);font-size:11px}.layer h2{font-family:'Archivo Black',sans-serif;font-size:clamp(21px,2.4vw,38px);letter-spacing:-.055em;margin:0 0 10px}.layer p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}.ticker{overflow:hidden;background:var(--signal);color:var(--night);padding:11px 0;font-weight:700;font-size:10px;text-transform:uppercase;white-space:nowrap}.ticker div{animation:marquee 22s linear infinite}@keyframes marquee{to{transform:translateX(-50%)}}
-    .section{padding:105px 5vw;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:1fr 2fr;gap:40px;margin-bottom:70px}.section h2{font-family:'Archivo Black',sans-serif;font-size:clamp(44px,7vw,104px);line-height:.88;letter-spacing:-.07em;text-transform:uppercase;margin:0}.section-lede{max-width:650px;font-size:15px;line-height:1.8;color:#c7c8cd;margin:0;align-self:end}
-    .rls{background:var(--paper);color:var(--night)}.rls .section-label{color:#586600}.rls .section-lede{color:#4d4d50}.system-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #bcb9b1}.system{padding:26px;min-height:210px;border-right:1px solid #bcb9b1}.system:last-child{border:0}.system small{font-weight:700}.system h3{font-family:'Archivo Black',sans-serif;font-size:24px;letter-spacing:-.05em;margin:55px 0 12px}.system p{font-size:11px;line-height:1.65;margin:0;color:#57575c}.universe-grid{border-color:var(--line)}.universe-grid .system{border-color:var(--line)}.universe-grid .system p{color:#b9bac0}.pipeline{margin-top:24px;display:grid;grid-template-columns:repeat(7,auto);align-items:center;gap:10px;padding:17px;border:1px solid #bcb9b1;font-size:10px;text-transform:uppercase}.pipeline .arrow{text-align:center;color:#7c7c80}
-    .split{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.feature{padding:90px 5vw;min-height:560px}.feature:first-child{border-right:1px solid var(--line)}.feature .num{color:var(--violet);font-size:11px}.feature h2{font-family:'Archivo Black',sans-serif;font-size:clamp(42px,5vw,76px);line-height:.9;letter-spacing:-.065em;margin:80px 0 24px}.feature p{max-width:580px;color:#b9bac0;line-height:1.75}.feature .fact{display:inline-block;margin-top:44px;border:1px solid var(--line);padding:12px 14px;color:var(--signal);font-size:10px;text-transform:uppercase}.feature.gaia{background:var(--violet);color:var(--night)}.feature.gaia .num,.feature.gaia .fact{color:var(--night)}.feature.gaia p{color:#25242d}.feature.gaia .fact{border-color:#625a99}
-    .log{padding:100px 5vw}.log-grid{margin-top:52px;border-top:1px solid var(--line)}.log-row{display:grid;grid-template-columns:120px 160px 1fr auto;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);align-items:center}.log-row time,.log-row .tag{font-size:10px;color:var(--muted);text-transform:uppercase}.log-row h3{font-size:14px;margin:0}.log-row strong{color:var(--signal);font-size:10px;text-transform:uppercase}
-    .origin{display:grid;grid-template-columns:1fr 1fr;background:var(--signal);color:var(--night)}.origin>div{padding:75px 5vw}.origin>div:first-child{border-right:1px solid #9aaf25}.origin h2{font-family:'Archivo Black',sans-serif;font-size:clamp(38px,5vw,74px);line-height:.9;letter-spacing:-.065em;margin:0}.origin p{line-height:1.75;max-width:600px;margin:0}.origin em{font-weight:700}
-    footer{display:flex;justify-content:space-between;align-items:end;padding:44px 30px;color:var(--muted);font-size:10px;text-transform:uppercase}.footer-brand{color:var(--paper)}
-    @media(max-width:900px){nav{grid-template-columns:1fr auto}.navlinks{display:none}.hero{grid-template-columns:1fr}.layer-map{border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr}.map-head{grid-column:1/-1}.layer{border-right:1px solid var(--line)}.system-grid{grid-template-columns:1fr 1fr}.system:nth-child(2){border-right:0}.system:nth-child(-n+2){border-bottom:1px solid #bcb9b1}.pipeline{grid-template-columns:1fr}.pipeline .arrow{transform:rotate(90deg)}.split,.origin{grid-template-columns:1fr}.feature:first-child,.origin>div:first-child{border-right:0;border-bottom:1px solid var(--line)}.section-head{grid-template-columns:1fr}.log-row{grid-template-columns:100px 1fr}.log-row .tag{display:none}.log-row strong{text-align:right}}
-    @media(max-width:560px){nav{height:62px;padding:0 18px}.status{display:none}.hero-copy{padding:80px 24px 60px}.hero{min-height:0}.hero h1{font-size:56px}.layer-map{grid-template-columns:1fr}.section,.log{padding:75px 24px}.system-grid{grid-template-columns:1fr}.system{border-right:0;border-bottom:1px solid #bcb9b1}.feature{padding:70px 24px;min-height:0}.log-row{grid-template-columns:1fr}.log-row strong{text-align:left}.origin>div{padding:55px 24px}footer{align-items:start;gap:25px;flex-direction:column}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div{animation:none}}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tópoda Charts Studios — Games, stories, and Gaia</title>
+  <meta name="description" content="Tópoda Charts Studios is an independent studio building RLSim, The Twenty-four Hundreds, and the shared world of Gaia.">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta property="og:title" content="Tópoda Charts Studios">
+  <meta property="og:description" content="An independent studio building a music-industry simulation, a connected story, and the world they share.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://topodacharts.com/">
+  <link rel="canonical" href="https://topodacharts.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="shell">
-    <nav><a class="brand" href="#top">TÓPODA <i>CHARTS</i></a><div class="navlinks"><a href="#universe">Universe</a><a href="#rls">RLS</a><a href="#tth">TTH</a><a href="#gaia">Gaia</a></div><div class="status">Music · Power · Legacy</div></nav>
-    <main>
-      <section id="top" class="hero">
-        <div class="hero-copy"><p class="kicker">Tópoda Charts presents</p><h1>Every record<span>leaves a legacy.</span></h1><p class="intro">Enter a shared universe where music moves markets, creates icons, destroys relationships, and writes history. Build its future in <strong>Record Label Simulator</strong>. Discover the lives that came before in <strong>The Twenty-four Hundreds</strong>.</p><div class="actions"><a class="btn primary" href="/rls">Play RLS <b>↗</b></a><a class="btn" href="/tth">Enter the story <b>→</b></a></div></div>
-        <aside class="layer-map"><div class="map-head">Choose your way into Gaia</div><div class="layer"><b>PLAY</b><div><h2>RLS</h2><p>Find the next voice. Build the label. Fight for the top.</p></div></div><div class="layer"><b>READ</b><div><h2>TTH</h2><p>One invitation. One final night. A century about to turn.</p></div></div><div class="layer"><b>ENTER</b><div><h2>Gaia</h2><p>A future Earth where songs cross borders—and ambition redraws them.</p></div></div></aside>
-      </section>
-      <div class="ticker"><div>SIGN THE ACT&nbsp;&nbsp;◆&nbsp;&nbsp;SHAPE THE ERA&nbsp;&nbsp;◆&nbsp;&nbsp;MOVE THE CHARTS&nbsp;&nbsp;◆&nbsp;&nbsp;LEAVE A LEGACY&nbsp;&nbsp;◆&nbsp;&nbsp;SIGN THE ACT&nbsp;&nbsp;◆&nbsp;&nbsp;SHAPE THE ERA&nbsp;&nbsp;◆&nbsp;&nbsp;MOVE THE CHARTS&nbsp;&nbsp;◆&nbsp;&nbsp;LEAVE A LEGACY&nbsp;&nbsp;◆&nbsp;&nbsp;</div></div>
-      <section id="universe" class="section"><div class="section-head"><div><p class="section-label">The Tópoda Charts Universe</p><h2>One world. Every consequence.</h2></div><p class="section-lede">A song born in a bedroom can ignite a country. A stranger can become the face of a generation. A rivalry can outlive everyone who started it. Across the game and the stories, the same artists, cities, scandals, and songs keep colliding—turning private choices into the history of Gaia.</p></div><div class="system-grid universe-grid"><article class="system"><small>THE SOUND</small><h3>A song can change everything</h3><p>One undeniable record can cross borders, revive a career, or put an unknown name on every screen in Gaia.</p></article><article class="system"><small>THE STARS</small><h3>Icons are made in public</h3><p>Talent earns attention. Charisma builds devotion. Pressure reveals who can survive being seen by everyone.</p></article><article class="system"><small>THE RIVALRIES</small><h3>Success creates enemies</h3><p>Competing labels, wounded friends, hungry newcomers, and old betrayals make every victory personal.</p></article><article class="system"><small>THE AFTERMATH</small><h3>Fame leaves a shadow</h3><p>The charts move on. People remember. Every triumph, collapse, and comeback becomes part of the next story.</p></article></div></section>
-      <section id="rls" class="section rls"><div class="section-head"><div><p class="section-label">01 / The game</p><h2>Record Label Simulator</h2></div><p class="section-lede">Start with an empty office and an ear for the future. Discover voices before the world knows their names, gamble on the records you believe in, and build a label powerful enough to define an era. Every artist has ambitions. Every audience is unpredictable. Every number-one has somebody coming for it.</p></div><div class="system-grid"><article class="system"><small>DISCOVER</small><h3>Hear tomorrow first</h3><p>Find raw talent in overlooked scenes and decide who deserves the chance that could change both your lives.</p></article><article class="system"><small>CREATE</small><h3>Turn promise into a phenomenon</h3><p>Choose the sound, image, collaborators, and moment that can transform a great song into a cultural event.</p></article><article class="system"><small>COMPETE</small><h3>Fight for every listener</h3><p>Outmaneuver rival labels, survive bad press, and keep the world watching when the next sensation arrives.</p></article><article class="system"><small>ENDURE</small><h3>Become more than a hit</h3><p>Manage egos, expectations, and reinvention. Build careers that survive the charts—and a legacy that outlives you.</p></article></div><div class="pipeline"><b>Find the voice</b><span class="arrow">→</span><b>Make the record</b><span class="arrow">→</span><b>Capture the world</b><span class="arrow">→</span><b>Defend the crown</b></div><div class="actions"><a class="btn primary" href="/rls">Build your label <b>↗</b></a></div></section>
-      <div class="split"><section id="tth" class="feature"><span class="num">02 / THE STORY</span><h2>The Twenty-four Hundreds</h2><p>December 31, 2399. The century has hours left. Marc Hann receives an invitation he was never meant to need—and walks into a night of old wounds, shifting loyalties, and friendships one secret away from breaking. Before they became legends, they were young, reckless, and desperate to matter.</p><a class="fact" href="/tth">Enter the final night →</a></section><section id="gaia" class="feature gaia"><span class="num">03 / THE WORLD</span><h2>Welcome to Gaia.</h2><p>Future Earth survived catastrophe and became something new. In Annglora, Bytenza, and Crowlya, music travels faster than politics, stars become symbols, and the next cultural revolution may begin with one voice nobody can ignore.</p><span class="fact">Three nations. One global stage.</span></section></div>
-      <section class="origin"><div><h2>Hear the hit. Know the story.</h2></div><div><p>Play the rise of the label. Read the lives behind the legends. Cross the borders of Gaia and watch a song become a movement, a romance become a scandal, and a single night echo across an entire century.</p></div></section>
-    </main>
-    <footer><a class="footer-brand brand" href="#top">TÓPODA <i>CHARTS</i></a><span>Record Label Simulator</span><span>The Twenty-four Hundreds · Gaia</span></footer>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="Tópoda Charts Studios home">TÓPODA <span>CHARTS</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#now">Now</a>
+      <a href="#studio">Studio</a>
+    </nav>
+    <span class="header-status"><i></i> In development</span>
+  </header>
+
+  <main id="main">
+    <section class="hero grid-bg">
+      <div class="hero-copy">
+        <p class="eyebrow">Tópoda Charts Studios / independent studio</p>
+        <h1>Big worlds.<br><em>Clear receipts.</em></h1>
+        <p class="hero-lede">We’re building a music-industry simulation, a connected story, and the future Earth they share. Ambitious on purpose. Honest about where it is.</p>
+        <div class="actions">
+          <a class="button primary" href="#work">See the work <span>↓</span></a>
+          <a class="button" href="/rls">Explore RLSim <span>→</span></a>
+        </div>
+      </div>
+      <aside class="truth-card" aria-label="Current public status">
+        <p class="eyebrow">Right now / August 2026</p>
+        <h2>No fake countdown. No mystery download button.</h2>
+        <p>RLSim is in active development for Windows. Its first planned public release is a focused, free Experimental Alpha. There is no public build available yet.</p>
+        <a href="#now">What the alpha is meant to prove →</a>
+      </aside>
+    </section>
+
+    <div class="signal-strip" aria-hidden="true"><span>GAME / STORY / WORLD / STUDIO / GAME / STORY / WORLD / STUDIO /</span></div>
+
+    <section id="work" class="section work">
+      <div class="section-intro">
+        <p class="eyebrow">The studio slate</p>
+        <h2>Three branches.<br>One shared world.</h2>
+        <p>Each project has a different job. Keeping those jobs clear lets us tell you what exists without pretending every idea is already a finished product.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card acid">
+          <div class="card-meta"><span>01 / Game</span><span>Active development</span></div>
+          <h3>RLSim</h3>
+          <p>Record Label Simulator is a Windows-first music-industry management simulation. Run a label inside Gaia through structured systems, readable outcomes, and decisions with a paper trail.</p>
+          <a href="/rls">Current game scope →</a>
+        </article>
+        <article class="project-card violet">
+          <div class="card-meta"><span>02 / Story</span><span>In development</span></div>
+          <h3>The Twenty-four Hundreds</h3>
+          <p>A developing story branch set in Gaia, beginning as the year 2399 gives way to 2400. We’re sharing the premise while the story’s final shape stays in the workroom.</p>
+          <a href="/tth">Read the public premise →</a>
+        </article>
+        <article class="project-card paper">
+          <div class="card-meta"><span>03 / World</span><span>Foundation in progress</span></div>
+          <h3>Gaia</h3>
+          <p>A future Earth shared by the game and story. Central Bloomville is the first place being realized; the wider world includes Annglora, Bytenza, and Crowlya.</p>
+          <span class="plain-link">More when it’s ready. That’s the whole sentence.</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="now" class="section now">
+      <div class="section-intro compact">
+        <p class="eyebrow">What exists next</p>
+        <h2>The first public milestone is deliberately small.</h2>
+      </div>
+      <div class="status-board">
+        <div class="version-block">
+          <span>Planned public label</span>
+          <strong>0.1.0-alpha.1</strong>
+          <b>Experimental Alpha / Windows</b>
+        </div>
+        <div class="status-list">
+          <div><span>01</span><p><strong>Observe</strong> Central Bloomville as a living-world foundation.</p></div>
+          <div><span>02</span><p><strong>Inspect</strong> the people and state that make the place legible.</p></div>
+          <div><span>03</span><p><strong>Save</strong> locally and return to the same world state.</p></div>
+        </div>
+      </div>
+      <p class="fine-print">This alpha is not the complete label-management game. A download will appear here only after the Windows build, package, version, and delivery path have been verified.</p>
+    </section>
+
+    <section id="studio" class="section studio">
+      <div class="studio-statement">
+        <p class="eyebrow">The real-world layer</p>
+        <h2>A passion-led studio with a long view.</h2>
+      </div>
+      <div class="studio-copy">
+        <p>Tópoda Charts Studios is the independent studio and public brand behind this work. It’s founded and led by JL, who sets the creative, product, and business direction.</p>
+        <p>The goal is to build original work where simulation systems, story, and worldbuilding can actually support each other. The studio may grow into a commercial business; the business model is not settled, so we won’t cosplay certainty.</p>
+        <p>The name “Tópoda” comes from hearing “top of the” through a Spanish and Dominican ear—a small linguistic bend toward “top of the charts.”</p>
+      </div>
+    </section>
+
+    <section class="section principles" aria-labelledby="principles-title">
+      <p class="eyebrow">Public promises</p>
+      <h2 id="principles-title">What we’ll say. What we won’t.</h2>
+      <div class="principle-grid">
+        <article><span>Say it plainly</span><p>Current status, current platform, and what a milestone actually contains.</p></article>
+        <article><span>Show the work</span><p>Products get public detail when the underlying work can support it.</p></article>
+        <article><span>Leave room</span><p>Unsettled releases, pricing, lore, and features stay unsettled in public too.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="wordmark" href="/">TÓPODA <span>CHARTS</span></a>
+    <p>Games, stories, and one future Earth.</p>
+    <p>© 2026 Tópoda Charts Studios</p>
+  </footer>
 </body>
 </html>

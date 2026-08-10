@@ -3,8 +3,16 @@
     "public": "public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
-    "redirects": [
-      { "source": "/rls", "destination": "https://record-label-simulator.web.app", "type": 302 }
+    "trailingSlash": false,
+    "headers": [
+      {
+        "source": "**/*.@(css|svg)",
+        "headers": [{ "key": "Cache-Control", "value": "public,max-age=3600" }]
+      },
+      {
+        "source": "**/*.html",
+        "headers": [{ "key": "Cache-Control", "value": "public,max-age=0,must-revalidate" }]
+      }
     ]
   }
 }
