@@ -4,41 +4,37 @@ import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 
-test("the company landing page sells the shared universe and its products", async () => {
+test("homepage presents the real studio slate and honest status", async () => {
   const html = await readFile(new URL("public/index.html", root), "utf8");
-
-  assert.match(html, /Every record/);
-  assert.match(html, /leaves a legacy/);
-  assert.match(html, /The Tópoda Charts Universe/);
-  assert.match(html, /Record Label Simulator/);
+  assert.match(html, /Tópoda Charts Studios/);
+  assert.match(html, /RLSim/);
   assert.match(html, /The Twenty-four Hundreds/);
-  assert.match(html, /Welcome to Gaia/);
-  assert.match(html, /Hear tomorrow first/);
-  assert.match(html, /Fight for every listener/);
-  assert.match(html, /href="\/rls"/);
-  assert.match(html, /href="\/tth"/);
-  assert.doesNotMatch(html, /mailto:|hello@topodacharts\.com/i);
-  assert.doesNotMatch(html, /road to mvp|public paper trail|current canon|project layer|active development/i);
+  assert.match(html, /Gaia/);
+  assert.match(html, /No public build available yet/i);
+  assert.match(html, /Experimental Alpha/);
+  assert.doesNotMatch(html, />Play RLS|Build your label|Download now/i);
 });
 
-test("the story page stays immersive and gives readers a concrete hook", async () => {
+test("RLSim page states the current product and delivery boundary", async () => {
+  const html = await readFile(new URL("public/rls/index.html", root), "utf8");
+  assert.match(html, /Windows-first/);
+  assert.match(html, /Unity 6\.5 HDRP/);
+  assert.match(html, /0\.1\.0-alpha\.1/);
+  assert.match(html, /old browser-game direction is deprecated/i);
+  assert.match(html, /No public build is available yet/i);
+});
+
+test("TTH page keeps draft-specific material private", async () => {
   const html = await readFile(new URL("public/tth/index.html", root), "utf8");
-
-  assert.match(html, /31 December 2399/i);
-  assert.match(html, /Marc Hann/);
-  assert.match(html, /invitation he was never supposed to need/i);
-  assert.match(html, /A story from Gaia/);
-  assert.doesNotMatch(html, /canon|spoiler-safe|branch stabilizes|active development/i);
+  assert.match(html, /2399 becomes 2400/);
+  assert.match(html, /Not publicly released/);
+  assert.doesNotMatch(html, /Marc Hann|invitation he was never supposed to need/i);
 });
 
-test("Firebase routes the public product paths correctly", async () => {
+test("Firebase serves local product pages without the deprecated game redirect", async () => {
   const config = JSON.parse(await readFile(new URL("firebase.json", root), "utf8"));
-  const redirect = config.hosting.redirects.find(({ source }) => source === "/rls");
-
   assert.equal(config.hosting.public, "public");
-  assert.deepEqual(redirect, {
-    source: "/rls",
-    destination: "https://record-label-simulator.web.app",
-    type: 302,
-  });
+  assert.equal(config.hosting.cleanUrls, true);
+  assert.equal(config.hosting.trailingSlash, false);
+  assert.equal(config.hosting.redirects, undefined);
 });

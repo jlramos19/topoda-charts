@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://topodacharts.com/sitemap.xml
