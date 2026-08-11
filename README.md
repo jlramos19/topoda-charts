@@ -1,6 +1,6 @@
 # Tópoda Charts Studios website
 
-Public company and product website for [topodacharts.com](https://topodacharts.com), deployed through Firebase Hosting project `topoda`.
+Public company and product website for [topodacharts.com](https://topodacharts.com), deployed through Firebase Hosting project `topoda`. Production is the static `public/` tree only; there is no parallel application runtime.
 
 ## Current public scope
 
