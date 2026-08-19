@@ -10,8 +10,9 @@ test("homepage presents the real studio slate and honest status", async () => {
   assert.match(html, /RLSim/);
   assert.match(html, /The Twenty-four Hundreds/);
   assert.match(html, /Gaia/);
-  assert.match(html, /No public build available yet/i);
+  assert.match(html, /No public build is available yet/i);
   assert.match(html, /Experimental Alpha/);
+  assert.doesNotMatch(html, /fake countdown|mystery download button|cosplay certainty/i);
   assert.doesNotMatch(html, />Play RLS|Build your label|Download now/i);
 });
 
