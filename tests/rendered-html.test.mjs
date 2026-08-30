@@ -13,11 +13,11 @@ test("homepage presents the real studio slate and honest status", async () => {
   assert.match(html, /No public build is available yet/i);
   assert.match(html, /Experimental Alpha/);
   assert.doesNotMatch(html, /fake countdown|mystery download button/i);
-  assert.doesNotMatch(html, />Play RLS|Build your label|Download now/i);
+  assert.doesNotMatch(html, />Play RLSim|Build your label|Download now/i);
 });
 
 test("RLSim page states the current product and delivery boundary", async () => {
-  const html = await readFile(new URL("public/rls/index.html", root), "utf8");
+  const html = await readFile(new URL("public/rlsim/index.html", root), "utf8");
   assert.match(html, /Windows-first/);
   assert.match(html, /Unity 6\.5 HDRP/);
   assert.match(html, /0\.1\.0-alpha\.1/);
@@ -38,4 +38,22 @@ test("Firebase serves local product pages without the deprecated game redirect",
   assert.equal(config.hosting.cleanUrls, true);
   assert.equal(config.hosting.trailingSlash, false);
   assert.equal(config.hosting.redirects, undefined);
+});
+
+test("current website sources use only the RLSim name and route", async () => {
+  const paths = [
+    "AGENTS.md",
+    "README.md",
+    "public/index.html",
+    "public/rlsim/index.html",
+    "public/sitemap.xml",
+  ];
+  const staleName = ["R", "L", "S"].join("");
+  const staleRoute = ["/", "r", "l", "s"].join("");
+
+  for (const path of paths) {
+    const source = await readFile(new URL(path, root), "utf8");
+    assert.doesNotMatch(source, new RegExp(`\\b${staleName}\\b`));
+    assert.doesNotMatch(source, new RegExp(`${staleRoute}(?:[\"'<\\s]|$)`));
+  }
 });

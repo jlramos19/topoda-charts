@@ -5,7 +5,7 @@ Public company and product website for [topodacharts.com](https://topodacharts.c
 ## Current public scope
 
 - Tópoda Charts Studios company and portfolio landing page
-- RLSim current-status page at `/rls`
+- RLSim current-status page at `/rlsim`
 - The Twenty-four Hundreds public-premise page at `/tth`
 - No game runtime, account system, database, or download artifact
 
