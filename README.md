@@ -4,9 +4,10 @@ Public company and product website for [topodacharts.com](https://topodacharts.c
 
 ## Current public scope
 
-- Tópoda Charts Studios company and portfolio landing page
-- RLSim current-status page at `/rlsim`
-- The Twenty-four Hundreds public-premise page at `/tth`
+- Record Label Simulator-led homepage framed by Tópoda Charts Studios
+- Record Label Simulator product page at `/record-label-simulator`
+- The Twenty-four Hundreds story-layer page at `/the-twenty-four-hundreds`
+- Legacy acronym routes retained only as redirects
 - No game runtime, account system, database, or download artifact
 
 ## Verify
@@ -21,4 +22,4 @@ npm test
 firebase deploy --only hosting --project topoda
 ```
 
-The website is a delivery and information surface only. RLSim is a native Windows Unity game with local save authority.
+The website is a delivery and information surface only. Record Label Simulator is a native Windows Unity game with local save authority.
