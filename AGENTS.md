@@ -51,7 +51,7 @@ Do not implement canon, business, engine, platform, or architecture changes mere
 ## Project hierarchy
 
 - TCSU: franchise and shared-universe umbrella.
-- RLS: playable game branch.
+- RLSim: playable game branch.
 - Gaia: shared world and setting.
 - TTH: story and pre-game narrative branch.
 - TC: real-world solo studio, producer, and publisher.
