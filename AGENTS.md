@@ -1,5 +1,9 @@
 # AI Agents Operating Instructions — Tópoda Charts
 
+**Repository:** GitHub **`topoda-charts-studios-website`** — the studio’s public website (local folder `C:\dev\topoda-charts`).
+
+This repo is the **studio website** (GitHub **`topoda-charts-studios-website`**); Linear initiative **The studio**. **Who is who** is the same [Drive identity map](https://docs.google.com/document/d/1t9xc_4NAUY1Ue-2Fsr9FMwvfXsZKkopoyPIZOe_W4mA/edit) used across TCS checkouts.
+
 This file is **`AGENTS.md`** (plural on purpose). It applies to **every AI agent** that works in this repository or on JL-authorized Tópoda Charts tasks—not to one product or vendor only.
 
 When company knowledge defines a broader **`AI Agents`** policy, treat that document as company policy when it is available through approved company-knowledge access. This repository file is the shared baseline for repo work; it does not replace Drive scope where Drive governs.

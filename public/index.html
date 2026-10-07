@@ -3,32 +3,136 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tópoda Charts Studios</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAASjElEQVR4nO1ae2xkV3n/vnPunffL3pmxPd642QaSkG62LYiEkqh4FRFo1VKo5AAJIqqgQBYIpKq2tKW1kfoHNFJTKAUttCLlVVi3VDyqNECxoTTQBEF2k5DNahdnF8/cx7zvjO+dO3PP+fqH750dz8547fUSiNqfZFlz73l85zvf+X2PexB2ASLiAIAAQMEfItJuxnje4Pz589H19fXrdF0/VK/XryaiyKh2x48f50SkEBEnIkZE+FzLuheMFZaIsFKpJIQQV6uq+iuc8xdIKVMA0JBSPiOlPJnL5c4iohzVd3V1lc/PzwMA0NLSEi0tLf1CWsuOd4uI0LKsF0opbxFCHCaiQwAQB4CSlPJHiPh9xtjJffv2PYuI9pgxnn9HaHFxkRERG35ORJFarfYK0zTvN03zyVqtRo7jkK7rjq7rjxqG8XFd199hmuZvViqV2VFj+OPgysqKMnCMEHaxMXvFlomICLfbEV84BgCAiGLwXbVavYqIbpNSvoaIbsvn8ykAANd1oV6v2wBwlnP+DCI+JaV8UlGUU1LKc7lcrjVmrufEWi5b0wM7xQBADApHRPFGo3GTEOJVQojbEfHXs9ksICL0ej2wbRscx/EQ0QCAnyDiU4yxk0T0FCKeyWaz2qjFLi4usvn5eRZwCwDIvSpliwLW1tYyBw4caFzOQETEVldX2fz8PI2wjoNEdFgI8SoAuDkcDmdVVQUhBEgpgTHWV47rum3G2DkiOgUATyDiE5zzU/v27TuHiBtj5r5sa8FAeESUmqbNM8ZO5fN5AwDgcrUbHJXV1VU8fPiwN/iu3W5P93q9W4QQryaiVxDRC6PRKHS7XXBdF4gIQqEQRCIR4JyDEAJarRYxxkoAcAYAngKAk4j4VDweP5NIJPQxMjDwj+vy8jItLCyMtJYtCqhUKi8jokO5XO4TRMSHd3JogRwAJFxa2zjAHXLQbRJR2LKsF/d6vdullLcT0Yvj8XhESgkbGxsgpewiIhGRGgqFWCgUAlVVAQCg0+mA67otAHgWEU8xxk4i4hMA8Ey32z0/Ozs70hONVEAAwzASAPA5ALgrn89vIG7q51KDrKysKPPz8zs6k9sRqWEY1yDiPCK+WghxazQanVZVFTqdDti2TYyxrt+USSkVVVUxUApjDDzPg3a7LRljRQA4g4gnAeBxRFwDgNKouKWvgGDHdV3/CiI+NDU19fGVlRVl0ISDNoZh3J1IJK6xbfvL2Wz2JCL2BtoEXCCHJxuljOXlZbawsIAwRKT1ej0jpXwZALxKCHEbEd2YTCbB8zxwHAc8zxP++IEVAwAgY4wrigKcc0gmk6AoCtRqtZrneYv5fP4YAHiD8wwqQEFET9f19xDRu6enp1+4uUlbTJYhotR1/cZkMnnScRwQQpxCxFVFUR5SFOWRVCpVGVqkAjtk7HFESkSs0WgcklLe5nPHTfF4PIWI4DgOdDqdoD0CACmKosRiMXBd9zxj7OO2bX9y//791e3mDkgDyuXyda1Wi0zT/C3/OR9qxwEAisXipzY2Nsg0TbJtmyzLIsMwKqZpfqVcLh+xLOv6EXPwlZUVZXFxcWRQNNQWg/bD7yqVymy1Wn1DuVx+0DCMtVqtRrZtU7PZJNu2qVwur9dqtfc1m819w+sbxqAFoE84TNf1opTy/Ozs7M3Brgftjh8/zhcWFmS9Xr9RCPFDz/NISglExEKhEItGo8A5B8uyPMbY44yxb3LOH85kMo8NurHdEOlQzDFMpNF6vf4SIcTtnPNbpJTftG372NzcXA2gz0/CXxsCbOPdgt3VNO2fer0eVSqVmwefDyoBAKBUKn2l3W5TqVTqlUolKhaLslgsesVisadpGtXrdbJtm+r1Opmmea5SqXymXC7fVa1Wrxqe2w+Hg1B4WwTWMSzXiPECfsBRlgQAMPwwmPzbiqK8udPpvA8AXre8vLyl0cLCAgAAcM4/1O12f9e3EsBNt8H9Scm2bbJtWxIRj0Qic9Fo9E1E9KZ2u902TfMxRHxYVdVvptPpxxGxT7bHjx/nuVwOxxGpv4MiWBxsWgbCpjUhbFqJFyzcH9uzLCvb7XZz2Wz26cDih3OBICA6qCjKjxARGWMvnpiYeGJ5eZndcccdYrhtsVhcTSaTr2i1WgIRx+6IL5wkIuSc82g0CqqqQrvdBiJ6mnP+LcbYf3DOv5dOp7cQ1m6INFDK6uoqDzxYpVJJqar6lk6n8y4A+P2pqakTgfwjkyEiUjVNeyKfz19XLpc/PTMzc/dwYBT8LpVKv51IJP7dsizJGLskufl9yVcIAYASjUYhEokELq6MiI9wzh9SFGUlnU6fHuo7NkAbRr1ez3ie94dSynvy+fwBTdPuLxQKRwfHuOi8BS81TftsOp2+s9VqdQDgxnw+/xMYcouLi4tsaWkJSqXSD+Lx+K/Zti3BPwK7AREF1tEnUsYYtFqtHmPsR4j4DSL6eq/X+8F2EV5AltVqNYGI90gpj8RisTnP88C27fOKohzMZrMbMEC6o3YsYMrveJ6HsVgsKoS4z++wRWHz8/MMESXn/H5VVdEPRnYNRGSIqDDGWK/XI8uyRL1eF34IfFM8Hv9zRVG+rSjKj3Vd/7RlWdmBBfexvLzMEFF2u91jk5OTH5RSztXrdZdzDgDwAT/13pLyj7KAPg8g4gm/Tdt13evn5uY0GLCCAQFUTdOejEQiL3AchxBxR0fhUvCPSnBcYGJiQmk0Gs96nnfDVVdd1fGVRwNykx9O/1gIgVJKisfjquM4P5yenr4JLux8XwGjBCUAgOnp6WeklGuIiMlkMqmq6jsRkVZXV/t9/N8cEbuMsb+JRCJIl2sGI4CbYIioAABIKQEAlubm5hwA4IM76ctFUsp3JBIJVUoJwUYg4tHBSHHLHKMmHuCBzyWTyTvb7bYkolo0Gr02nU43gsX7bREAwDTNuBDiVCgUKnS7XYLRyr1cSFVVsdfr6aqqXpfNZtujZGg0GmnXdU8zxnK9Xq+XTqdVy7K+XCgUXjuOPMcJGfDAtxljIIToZTKZrOM4b/Un7RNdYAVTU1NtRPxoPB5Hn9SuGIhIJhIJRMR/zOVyLd/qBneSIyJ1Op27UqlUrtfreZxz3ul0XCJ6n6+gkZY5zgL6PMAYO+F5HoTDYex2u+szMzPXA4ATLN5vjwAAlmVNOo5zmjE20ev1gsBor4snxhhwzh1FUV40OTl5fjg8D8LqUql0IhaL3WDbdndycjJUr9f/tlAo3Led6xxnAX0eEEKsRSIR5rqul8lkrjIM465g14PGwW8/gPlkMplE8CO1KwCRSqXQ87x/8xfPBxfvR3pULpdvTyaTN9i27YVCIcWyrHI8Hv8rImJLS0tjeWm7DyN9HkilUnc2m81uJBJRO53OMzMzM4dgM68G8JXlZ1tUrVZnhRCniCgmhLgSViDD4TAS0cuy2exj/u5fFJGWSqWHk8nk7ZZluZOTk+FGo3HvzMzM3w3XNIaxHVH14wFEBCJijuPIVCp1va7rr0NEWllZGbQCCQAsm82uSyk/m0ql9mwFRCQSiQRzHOe/s9nso36k2h/z+PHjHBFJ1/VDoVDotlar5UWj0VCtVnu6Wq0eIyI2Pz+/rQzbKSAws++1220ZxPme55EQ4qhfoh4mOyIiVBTlgY2Nja7fZ09ukTEGqqp+GKDv6vrwkzKSUr4rFotxIpKqqiJj7OjBgwe7MBT0jBx/m3cEADA1NXWq1+udC4fDCADYbrcplUq95MiRI69ERDmYkgZWkMvlnun1el9Kp9NIRJdlBUQkI5EItyzrbLPZ/CoR4eBuLi4uMtwsz00zxl7fbDZFMpkMtVqtb8zMzHxtpznDWAX4SVEQ5Hw/EokAIvazMSHEnwwqari7oij3O44j9xAVylgsBoh47Nprr3VhKPBZWlpiAABSyj9IpVIpIpK++zsKADCcwo/DpYQb5gFARN5qtWQkEjlsGMbLR1iBICLM5/M/dF334WQyyXZrBUREiqLwZrPZiMfjD/pyDBIfAoAgoggRva3ValE6nVZd1/3U1NTU40TEB1P3vSggOOOPDPIAIspQKARCiHHaRgAAVVU/6Hle//cuIJLJJBLR51OpVDmI84OXQSBULpdfm0qlrpZSUrvdbiqKsrhd0DMKl1LARTzgR3mKZVlSVdXf0XX9xoWFBRmUyQD6VsDy+fx3HMf57m6tABH5xsaGBwAfgxHxe0C+nufd67oupVIpJqX8YD6f13zl7DgSHVknGxCkzwOapn0/HA4fcF1XAgAjIhmLxRTLsv4YEe8ekQMhAICiKB9CxFt9F3ZJgYhIpFIpblnW12dnZ58aEfVxRJSGYbycc/4bUkqyLOsn09PTH/ZjkV0dt50QFAIAMMb+K+ABgM1dsiyLOOd36Lr+y+AXNPqdEMXi4iLL5XIPWZZ1IpFI7CguICKUUoKiKB8enH+4mRDiXlVVKRQKIQD8GSI6sAO3N4ydKEACADDGvrWxsQF+2YsAAKWUIplMRqSU792mYCKCgomfzm4HEY/Hsd1un8zn8/85HPgEUaCmaQcYY69hjOHGxsZ3C4XCF/2gaNcu95IKCFje9+0PTExMMCllMBG3LIsYY3ebpjkDQ1YwPz8viAinpqb+pdlsnonFYmy7TFFKCeFwGDnnH/UXs6W8FgRCiPi2ZDIZ7XQ6kjF2lIj6leorroBANiJihULhaKPR+J9UKqVIKQUioud5Ip1Op4QQR0YVTGDTf7uc8wcuUTCR4XCYNxoNXVGULwauLngZBEKVSiUlpXyzqqrQ6/X+eXp6+nu7KZRelgKCc4WIHiLe1e12m6FQCKWUBAC81WoRALy9Xq9ngl0f6C6ICBljn2k2m6VwOMzggnvtw8/5gTH2qWw2a43L+T3Pe8PExEShXq+3EPH9u3V7l6UAf/FyZWVFmZqaOtvpdN4ei8UYY0wgIvZ6PZHJZHKu675lXKqcy+VaiPj3iUTiooKJn/Nzy7I6RPQJgAuubgCCiLiU8h2RSASklA/MzMw8CwBbvMRusetUlfyvyJqmfSyTydxTrVY9xhgLhULY7XZ/SkQvKhQKIwsmpVJpH2PsNGMs43leP1UmIi+TySjNZvMLhULhjeO+Qei6/spkMvl1y7J+qqrqwX379rVhj5enLidOF0TEp6en72s2mycSiYRCRNTpdGQmk5lTVfWN46xgdna2QkT/MCJVZq7rAmPsIzDG7QEACCHujcViQETvz2azFlyG2xvGZRUrBooQN4TD4ceEEGHP8ygSiXDHcU4VCoVfhaGLCEHBpFgs7g+FQk9LKWNCCAAAmUgk2MbGxiOFQuHWEYEPQ0RZLpevj0QiT7bb7RPT09MvBehb2N7S7cvpFPBBoVD4seM470okEhwAwHEcmU6nX2Sa5u/5BRNlsA8AsP379/9UCPG5QSvgnKOiKB8BuDjnB3+Tut3uu+PxOOec34cXbob8fG+Z0uZHS9A07UHHcWh9fd1tNptULBYfpc1P2GyoPSMiLJfL15mm2S2VSqJarVKpVDq7trYW8ftsubMAANBoNCYbjYZdLBa/5j/f9ee3cdhr7V74SdA7W63W0/F4PNRut3uJROKlpmluWzDxPO9L8XichUIh4JwfO3DgQAeGcn7wAyHHcd4aDoejiqK8Z69ubxh7UkAg7MzMzAYR3SmldDnn4Pvro36zcQWTv5ZSQrvdbkopH4TxOb/CGDtarVaPTU1NnYU9ur2fCYKjUCqV7rFtm9bX13vValVqmnYzbN4THL5nxAAAisXio5qmfd5/tqVNwB+6rr/RNM1Oo9GYICK2k/tFPxcMKOELrVaLGo2GLBaL/wpw4UrNQFtGRGgYxq21Wu3QOL7wx3tS07Q/BbiglF9IBIs4e/Zs2jTNM7VajQzD6FYqlRtGLfASY3EAQE3TDmuadoaIQoHSrrTcV8ycgnT4mmuuaQoh7pJSdpPJpNLtdv9oVKoMcMESxgxJAPBeRFxCxB2VuH8hMHAU7nNdlwzDsDRNu3qnVhC00XX9Rl3Xvwpw8RG6krjihIKbt7OUQqHwQKVS+VI+n09KKS+6W7DdEP7/O4nogSst33OCgK0bjcZkpVI5X6vVGs1mcx8R4XYsHhyHSqWy3zCMpWCs50jsK4vArRWLxVuEEKTr+l8AbM/kwWJN03x9uVy+fvDZ8xIBHxSLxQ8YhuFqmhYfDneHUavV0oZhvBpg8/PXcyXrzwQ0cEVV1/VHdV3/S//5RVYQKMUwjGvOnTs3cSlFPW8QuLpSqfRLuq4/ura2ltlucaOU87xHwAeapt1hGMaRwWf/ZxD4ctM037C+vh7c43/+m/gugESEp0+fDjcajQmAi296/j9+DvhfZxQvjSABcQ8AAAAASUVORK5CYII=">
-  <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      min-height: 100%;
-      background: #000;
-      color: #f2f0e8;
-    }
-
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    p {
-      margin: 0;
-      font-size: 16px;
-      font-weight: 400;
-    }
-  </style>
+  <title>Record Label Simulator | Tópoda Charts Studios</title>
+  <meta name="description" content="Record Label Simulator is a music-industry management game in development at Tópoda Charts Studios. Run a label inside Gaia, make executive decisions, and follow how the world responds.">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta property="og:title" content="Record Label Simulator | Tópoda Charts Studios">
+  <meta property="og:description" content="Run a record label inside a living music industry. Set direction, make executive decisions, and follow the consequences across audiences, charts, careers, and history.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://topodacharts.com/">
+  <link rel="canonical" href="https://topodacharts.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <p>Tópoda Charts Studios</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="Tópoda Charts Studios home">TÓPODA <span>CHARTS</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#game">Game</a>
+      <a href="#status">Status</a>
+      <a href="#world">World</a>
+      <a href="#studio">Studio</a>
+    </nav>
+    <span class="header-status"><i></i> In development</span>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Record Label Simulator</p>
+        <h1>Run a record label inside a world that reacts.</h1>
+        <p class="hero-lede">A music-industry management game where you set the label's direction, make the decisions that belong at the executive level, and follow what those choices do to careers, releases, audiences, charts, and the history of the world around them.</p>
+        <div class="actions">
+          <a class="button primary" href="/record-label-simulator">See the game <span>→</span></a>
+          <a class="button" href="#status">What exists now <span>↓</span></a>
+        </div>
+      </div>
+
+      <aside class="game-brief" aria-label="Record Label Simulator at a glance">
+        <div class="brief-head">
+          <span>Game at a glance</span>
+          <strong>Windows</strong>
+        </div>
+        <dl>
+          <div><dt>You are</dt><dd>A record label executive</dd></div>
+          <div><dt>You decide</dt><dd>Roster, priorities, budgets, releases, strategy</dd></div>
+          <div><dt>You read</dt><dd>Audiences, charts, trends, finances, history</dd></div>
+          <div><dt>The setting</dt><dd>Gaia, a future Earth</dd></div>
+        </dl>
+        <p class="brief-status"><i></i><span><strong>In development.</strong> No public build is available yet.</span></p>
+      </aside>
+    </section>
+
+    <section id="game" class="section split-section">
+      <div class="section-heading">
+        <p class="eyebrow">The game</p>
+        <h2>You make the calls. The world does the rest.</h2>
+      </div>
+      <div class="section-copy">
+        <p>Record Label Simulator is being built around executive-level management rather than manual busywork. Creators do their own work inside the simulation. You decide where the label commits its money, attention, timing, and support.</p>
+        <p>Advance the world, see what happened, and respond. When a release rises, stalls, finds an audience, loses momentum, or changes a career, the game is designed to let you inspect the causes instead of hiding the result behind an unexplained score.</p>
+      </div>
+    </section>
+
+    <section class="decision-grid" aria-label="Core player decisions">
+      <article>
+        <span>01</span>
+        <h3>Build the roster</h3>
+        <p>Sign and develop Creators, support Acts, and decide where the label invests.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Set direction</h3>
+        <p>Choose priorities, budgets, schedules, constraints, and the decisions that require executive approval.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Release music</h3>
+        <p>Guide production and release strategy, then decide when to push, redirect, pause, or reinvest.</p>
+      </article>
+      <article>
+        <span>04</span>
+        <h3>Read the response</h3>
+        <p>Follow audiences, Trends, charts, finances, reputation, and the consequences of earlier choices.</p>
+      </article>
+    </section>
+
+    <section id="status" class="section status-section">
+      <div class="section-heading">
+        <p class="eyebrow">Current development</p>
+        <h2>The first public build is smaller than the full game.</h2>
+      </div>
+      <div class="status-panel">
+        <p>Record Label Simulator is in active development for Windows. The first planned public Experimental Alpha is a focused proof of the living-world foundation in Central Bloomville. It is not the complete label-management game.</p>
+        <ol>
+          <li><span>Observe</span><p>Watch Central Bloomville run as a living simulation.</p></li>
+          <li><span>Inspect</span><p>Open people and world state to understand what is happening.</p></li>
+          <li><span>Save</span><p>Store the local world state and return to it later.</p></li>
+        </ol>
+        <p class="availability"><strong>No public download is available yet.</strong> This site will point to the Windows build when it is actually ready for release.</p>
+      </div>
+    </section>
+
+    <section id="world" class="section world-section">
+      <div class="section-heading">
+        <p class="eyebrow">Gaia</p>
+        <h2>The music industry has somewhere to live.</h2>
+      </div>
+      <div class="world-copy">
+        <p>Gaia is the future Earth where Record Label Simulator takes place. Its cities, nations, communities, institutions, media, culture, economy, and history give the music industry a world around it instead of an empty management screen.</p>
+        <p><strong>The Twenty-four Hundreds</strong> is part of that same narrative history. Its characters and story material are being integrated into Record Label Simulator through game-native surfaces rather than presented as a separate parallel product.</p>
+        <a class="text-link" href="/the-twenty-four-hundreds">About the story layer →</a>
+      </div>
+    </section>
+
+    <section id="studio" class="section studio-section">
+      <div class="section-heading">
+        <p class="eyebrow">Tópoda Charts Studios</p>
+        <h2>A solo studio building one connected game and world.</h2>
+      </div>
+      <div class="studio-copy">
+        <p>Tópoda Charts Studios is the independent studio behind Record Label Simulator. JL owns and directs the studio and sets its creative, product, and business direction.</p>
+        <p>AI-assisted creative and development workflows are used under JL's direction across research, writing, visual development, and implementation.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="wordmark" href="/">TÓPODA <span>CHARTS</span></a>
+    <p>Record Label Simulator</p>
+    <p>© 2026 Tópoda Charts Studios</p>
+  </footer>
 </body>
 </html>
