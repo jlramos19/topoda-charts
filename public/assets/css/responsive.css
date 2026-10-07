@@ -1,0 +1,168 @@
+@media (max-width: 900px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .site-header nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 72px 0;
+  }
+
+  .game-brief {
+    min-height: 0;
+  }
+
+  .split-section,
+  .status-section,
+  .world-section,
+  .studio-section,
+  .product-section {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .decision-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .decision-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .decision-grid article:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fact:nth-child(2) {
+    border-right: 0;
+  }
+
+  .fact:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header,
+  main,
+  footer,
+  .decision-grid {
+    width: min(100% - 28px, var(--max));
+  }
+
+  .site-header {
+    height: 62px;
+  }
+
+  .header-status {
+    display: none;
+  }
+
+  .hero {
+    padding: 56px 0;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-lede {
+    font-size: 17px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 40px;
+  }
+
+  .section-copy,
+  .world-copy,
+  .studio-copy,
+  .status-panel,
+  .product-section .body {
+    font-size: 16px;
+  }
+
+  .decision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .decision-grid article {
+    min-height: 220px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .decision-grid article:last-child {
+    border-bottom: 0;
+  }
+
+  .decision-grid h3 {
+    margin-top: 54px;
+  }
+
+  .status-panel {
+    padding: 22px;
+  }
+
+  .status-panel li {
+    grid-template-columns: 84px 1fr;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .fact {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .fact:last-child {
+    border-bottom: 0;
+  }
+
+  .product-hero {
+    padding: 62px 0;
+  }
+
+  .product-hero h1 {
+    font-size: 52px;
+  }
+
+  .product-section {
+    padding: 64px 0;
+  }
+
+  .notice {
+    grid-template-columns: 1fr;
+    padding-block: 44px;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding: 34px 0;
+    gap: 14px;
+  }
+
+  footer p:last-child {
+    text-align: left;
+  }
+}
