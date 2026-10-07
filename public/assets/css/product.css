@@ -1,0 +1,130 @@
+.product-hero {
+  padding: 92px 0 78px;
+  border-bottom: 1px solid var(--line);
+}
+
+.product-hero h1 {
+  max-width: 1050px;
+  margin: 0;
+  font-size: clamp(56px, 8vw, 110px);
+  line-height: 0.91;
+  letter-spacing: -0.07em;
+  font-weight: 800;
+}
+
+.product-hero h1 span {
+  display: block;
+  color: var(--acid);
+}
+
+.product-hero .lede {
+  max-width: 850px;
+  margin: 32px 0 0;
+  font-size: clamp(21px, 2.4vw, 30px);
+  line-height: 1.35;
+  color: #d4d3d8;
+}
+
+.product-hero .disclosure {
+  margin: 28px 0 0;
+  color: var(--muted);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.fact {
+  min-height: 150px;
+  padding: 26px;
+  border-right: 1px solid var(--line);
+}
+
+.fact:last-child {
+  border-right: 0;
+}
+
+.fact span {
+  display: block;
+  color: var(--acid);
+  font: 600 10px/1.2 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+}
+
+.fact strong {
+  display: block;
+  margin-top: 48px;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.product-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: 8vw;
+  padding: 82px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.product-section h2 {
+  max-width: 560px;
+  margin: 0;
+  font-size: clamp(36px, 4.6vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.product-section .body {
+  max-width: 760px;
+  color: #d0cfd4;
+  font-size: 18px;
+}
+
+.product-section .body > p:first-child {
+  margin-top: 0;
+}
+
+.milestone-list {
+  border-top: 1px solid var(--line);
+}
+
+.milestone-list div {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.milestone-list span {
+  color: var(--acid);
+  font: 600 11px/1.5 'IBM Plex Mono', monospace;
+}
+
+.milestone-list p {
+  margin: 0;
+}
+
+.notice {
+  margin: 0 calc((100vw - min(var(--max), calc(100% - 40px))) / -2);
+  padding: 56px max(20px, calc((100vw - var(--max)) / 2));
+  background: var(--acid);
+  color: #080808;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7vw;
+}
+
+.notice h2 {
+  margin: 0;
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.notice p {
+  margin: 0;
+  font-size: 18px;
+}
